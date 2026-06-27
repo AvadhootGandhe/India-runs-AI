@@ -1,0 +1,8 @@
+{
+  "model_name": "intfloat/e5-small-v2",
+  "embedding_dim": 384,
+  "num_candidates": 100000,
+  "normalized": true,
+  "faiss_index_type": "IndexFlatIP",
+  "batch_size": 64
+}
