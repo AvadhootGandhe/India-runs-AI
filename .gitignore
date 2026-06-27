@@ -1,43 +1,35 @@
-# Dependencies
-node_modules/
-graph-viz/node_modules/
-
 # Python
-venv/
 __pycache__/
+*.py[cod]
 *.pyc
-*.pyo
-*.egg-info/
-.eggs/
 
-# Build output
-graph-viz/dist/
-graph-viz/build/
-
-
-candidates.jsonl
-
-# Environment
-.env
-.env.local
-.env.*.local
+# Virtual env
+.venv/
+venv/
 
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
 
 # OS
 .DS_Store
 Thumbs.db
-desktop.ini
 
 # Logs
 *.log
-npm-debug.log*
 
-# Misc
-*.pdf
-check.txt
+# Temp
+tmp/
+temp/
+
+# Environment
+.env
+
+# Cache
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+redrob_docs/
