@@ -1,0 +1,64 @@
+Sharing + Running Notes
+
+1. Important artifact files:
+
+artifacts/
+  candidate_embeddings.npy
+  candidate_ids.csv
+  faiss.index
+  metadata.json
+  top_1000.csv
+
+2. Folder is zipped, download it
+
+3. Open PowerShell.
+
+4. Go to Downloads
+
+5. Unzip the file:
+Expand-Archive -Path .\india-runs-with-artifacts.zip -DestinationPath .\india-runs-shared -Force
+
+6. Go into the project folder:
+
+cd .\india-runs-shared\india-runs
+
+7. Create a virtual environment:
+
+python -m venv .venv
+
+7. Activate it:
+
+.venv\Scripts\activate
+
+8. Install requirements:
+
+pip install -r requirements.txt
+
+9. Set Python path:
+
+$env:PYTHONPATH = "src"
+
+
+10. artifacts folder already contains:
+
+artifacts\candidate_embeddings.npy
+artifacts\candidate_ids.csv
+artifacts\faiss.index
+artifacts\metadata.json
+
+directly run search:
+
+python -m retrieval_stage.cli search --jd-file job_description.docx --artifacts-dir artifacts --top-k 1000 --out-file artifacts/top_1000.csv
+
+Output will be saved here:
+
+artifacts\top_1000.csv
+
+
+11. to run everything from scratch
+
+Run these three commands:
+python -m retrieval_stage.cli embed-candidates --candidates candidates.jsonl --out-dir artifacts
+python -m retrieval_stage.cli build-index --artifacts-dir artifacts
+python -m retrieval_stage.cli search --jd-file job_description.docx --artifacts-dir artifacts --top-k 1000 --out-file artifacts/top_1000.csv
+
