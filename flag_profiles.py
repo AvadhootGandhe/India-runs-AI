@@ -136,14 +136,15 @@ def check_end_before_start(candidate):
 
 
 def check_current_company_mismatch(candidate):
-    profile_company = (candidate["profile"].get("current_company") or "").strip().lower()
+    profile = candidate.get("profile") or {}
+    profile_company = (profile.get("current_company") or "").strip().lower()
     career          = candidate.get("career_history", [])
     if not profile_company:
         return False, ""
     current_roles = [r.get("company", "").strip().lower() for r in career if r.get("is_current")]
     if current_roles and profile_company not in current_roles:
         return True, (
-            f"profile='{candidate['profile'].get('current_company')}' "
+            f"profile='{profile.get('current_company')}' "
             f"but current_role(s)={[r.get('company') for r in career if r.get('is_current')]}"
         )
     return False, ""
@@ -173,7 +174,8 @@ def check_proficiency_vs_assessment(candidate):
 
 
 def check_yoe_mismatch(candidate):
-    stated        = candidate["profile"].get("years_of_experience") or 0
+    profile       = candidate.get("profile") or {}
+    stated        = profile.get("years_of_experience") or 0
     career        = candidate.get("career_history", [])
     career_months = sum(r.get("duration_months", 0) or 0 for r in career)
     diff          = abs((career_months / 12) - stated)
@@ -232,11 +234,13 @@ def score_candidate(candidate, mode="default"):
     t     = THRESHOLDS.get(mode, THRESHOLDS["default"])
     score = result["suspicion_score"]
     nf    = result["flags_triggered"]
-    result["verdict"] = (
-        "HONEYPOT"   if (score >= t["honeypot_score"]   or nf >= t["honeypot_flags"])   else
-        "SUSPICIOUS" if (score >= t["suspicious_score"] or nf >= t["suspicious_flags"]) else
-        "CLEAN"
+    is_flagged = int(
+        score >= t["honeypot_score"] or nf >= t["honeypot_flags"] or
+        score >= t["suspicious_score"] or nf >= t["suspicious_flags"]
     )
+    result["flagged"] = is_flagged
+    result["flagged_label"] = "YES" if is_flagged else "NO"
+    result["verdict"] = "FLAGGED" if is_flagged else "CLEAN"
     return result
 
 
@@ -290,7 +294,9 @@ def build_enriched_nodes(flagged_rows, candidate_nodes_path: Path, out_path: Pat
         enriched[cid] = {
             **node,
             "flag": {
-                "verdict":         flag_row.get("verdict", "CLEAN"),
+                "verdict":         "FLAGGED" if int(flag_row.get("flagged", 0)) else "CLEAN",
+                "flagged":         int(flag_row.get("flagged", 0)),
+                "flagged_label":   flag_row.get("flagged_label", "NO"),
                 "suspicion_score": float(flag_row.get("suspicion_score", 0)),
                 "flags_triggered": int(flag_row.get("flags_triggered", 0)),
                 "flag_summary":    flag_row.get("flag_summary", ""),
@@ -338,7 +344,7 @@ def main():
     print(f"Scanning {in_path} ...", flush=True)
 
     rows   = []
-    counts = {"CLEAN": 0, "SUSPICIOUS": 0, "HONEYPOT": 0}
+    counts = {"CLEAN": 0, "FLAGGED": 0}
 
     for i, candidate in enumerate(iter_candidates(in_path)):
         row = score_candidate(candidate, mode=mode)
@@ -352,9 +358,8 @@ def main():
 
     total = sum(counts.values())
     print(f"\nDone. {total:,} candidates → {out_path}")
-    print(f"  CLEAN      : {counts['CLEAN']:>7,}  ({counts['CLEAN']/total*100:.1f}%)")
-    print(f"  SUSPICIOUS : {counts['SUSPICIOUS']:>7,}  ({counts['SUSPICIOUS']/total*100:.1f}%)")
-    print(f"  HONEYPOT   : {counts['HONEYPOT']:>7,}  ({counts['HONEYPOT']/total*100:.2f}%)")
+    print(f"  CLEAN   : {counts['CLEAN']:>7,}  ({counts['CLEAN']/total*100:.1f}%)")
+    print(f"  FLAGGED : {counts['FLAGGED']:>7,}  ({counts['FLAGGED']/total*100:.1f}%)")
 
     # Auto-generate enriched nodes for graph-viz if candidate_nodes.json exists
     cn_path      = Path(args.candidate_nodes)

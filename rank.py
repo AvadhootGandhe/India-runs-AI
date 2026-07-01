@@ -496,7 +496,7 @@ def build_reasoning(candidate, features, shap_vals, feature_names, score):
 # ─── Flagging (inline, avoids subprocess) ─────────────────────────────────────
 
 def quick_flag(candidate):
-    """Returns (verdict, suspicion_score) using core honeypot checks."""
+    """Returns (is_flagged, suspicion_score) using core honeypot checks."""
     career  = candidate.get("career_history", [])
     skills  = candidate.get("skills", [])
     sig     = candidate.get("redrob_signals", {}) or {}
@@ -547,13 +547,8 @@ def quick_flag(candidate):
 
     max_w = 0.20 + 0.15 + 0.10 + 0.15 + 0.25
     suspicion = round(score / max_w, 4)
-
-    verdict = (
-        "HONEYPOT"   if (suspicion >= 0.30 or flags >= 3) else
-        "SUSPICIOUS" if (suspicion >= 0.12 or flags >= 1) else
-        "CLEAN"
-    )
-    return verdict, suspicion
+    is_flagged = int(suspicion >= 0.12 or flags >= 1)
+    return is_flagged, suspicion
 
 
 # ─── I/O ───────────────────────────────────────────────────────────────────────
@@ -575,11 +570,17 @@ def iter_candidates(path: Path):
 
 
 def load_external_flags(path: Path):
-    """Load pre-computed verdicts from flag_profiles.py output."""
+    """Load pre-computed binary flag values from flag_profiles.py output."""
     flags = {}
     with open(path, encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            flags[row["candidate_id"]] = row["verdict"]
+            if "flagged" in row:
+                flags[row["candidate_id"]] = int(row.get("flagged", 0) or 0)
+            elif "is_flagged" in row:
+                flags[row["candidate_id"]] = int(row.get("is_flagged", 0) or 0)
+            else:
+                verdict = row.get("verdict", "CLEAN")
+                flags[row["candidate_id"]] = int(verdict != "CLEAN")
     return flags
 
 
@@ -619,11 +620,11 @@ def main():
     for i, c in enumerate(iter_candidates(in_path)):
         cid = c["candidate_id"]
 
-        # Flag check — skip confirmed honeypots
-        verdict = external_flags.get(cid)
-        if verdict is None:
-            verdict, _ = quick_flag(c)
-        if verdict == "HONEYPOT":
+        # Flag check — skip flagged candidates
+        is_flagged = external_flags.get(cid)
+        if is_flagged is None:
+            is_flagged, _ = quick_flag(c)
+        if is_flagged:
             skipped_honeypot += 1
             continue
 
