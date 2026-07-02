@@ -6,10 +6,10 @@ import faiss
 import numpy as np
 import pandas as pd
 
-from retrieval_stage.config import DEFAULT_CONFIG, RetrievalConfig
-from retrieval_stage.embeddings import E5Embedder
-from retrieval_stage.io_utils import load_candidate_ids
-from retrieval_stage.text_builders import JDTextBuilder
+from .config import DEFAULT_CONFIG, RetrievalConfig
+from .embeddings import E5Embedder
+from .io_utils import load_candidate_ids
+from .text_builders import JDTextBuilder
 
 
 def build_faiss_index(

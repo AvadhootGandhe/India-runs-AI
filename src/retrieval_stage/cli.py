@@ -3,10 +3,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from retrieval_stage.config import DEFAULT_CONFIG, RetrievalConfig
-from retrieval_stage.embeddings import generate_candidate_embeddings
-from retrieval_stage.faiss_index import build_faiss_index, search_jd
-from retrieval_stage.text_builders import JDTextBuilder
+from .config import DEFAULT_CONFIG, RetrievalConfig
+from .embeddings import generate_candidate_embeddings
+from .faiss_index import build_faiss_index, search_jd
+from .text_builders import JDTextBuilder
 
 
 def make_config(args: argparse.Namespace) -> RetrievalConfig:

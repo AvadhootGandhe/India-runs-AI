@@ -5,4 +5,4 @@ __all__ = [
     "JDTextBuilder",
 ]
 
-from retrieval_stage.text_builders import CandidateTextBuilder, JDTextBuilder
+from .text_builders import CandidateTextBuilder, JDTextBuilder

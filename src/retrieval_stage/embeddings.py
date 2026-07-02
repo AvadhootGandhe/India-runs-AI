@@ -8,9 +8,9 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 
-from retrieval_stage.config import DEFAULT_CONFIG, RetrievalConfig
-from retrieval_stage.io_utils import count_candidate_records, iter_candidate_records, save_candidate_ids
-from retrieval_stage.text_builders import CandidateTextBuilder
+from .config import DEFAULT_CONFIG, RetrievalConfig
+from .io_utils import count_candidate_records, iter_candidate_records, save_candidate_ids
+from .text_builders import CandidateTextBuilder
 
 
 class E5Embedder:
