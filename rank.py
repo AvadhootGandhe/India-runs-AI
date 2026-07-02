@@ -8,6 +8,7 @@ Usage:
 
 Optional:
     --flagged   artifacts/flagged.csv   (from flag_profiles.py; auto-runs if omitted)
+    --retrieval-results artifacts/top_1000.csv (semantic retrieval pool)
     --top-k     1000                    (pre-filter pool size before reranking)
     --debug                             (print feature stats + top-10 preview)
 """
@@ -583,6 +584,19 @@ def load_external_flags(path: Path):
     return flags
 
 
+def load_retrieval_candidate_ids(path: Path, limit: int | None = None):
+    """Load candidate IDs from the semantic retrieval output."""
+    candidate_ids = []
+    with open(path, encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            candidate_id = row.get("candidate_id")
+            if candidate_id:
+                candidate_ids.append(candidate_id)
+                if limit is not None and len(candidate_ids) >= limit:
+                    break
+    return set(candidate_ids)
+
+
 # ─── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -591,16 +605,26 @@ def main():
     parser.add_argument("--out",        "-o", default="submission.csv")
     parser.add_argument("--flagged",    "-f", default=None,
                         help="Pre-computed flagged.csv from flag_profiles.py")
+    parser.add_argument("--retrieval-results", "-r", default="artifacts/top_1000.csv",
+                        help="Top candidate CSV from semantic retrieval stage")
     parser.add_argument("--top-k",  type=int, default=1000,
-                        help="Pool size before reranking (default 1000)")
+                        help="Max rows to read from retrieval results before reranking (default 1000)")
     parser.add_argument("--debug",  action="store_true")
     args = parser.parse_args()
 
     in_path  = Path(args.candidates)
     out_path = Path(args.out)
+    retrieval_path = Path(args.retrieval_results)
 
     if not in_path.exists():
         print(f"ERROR: {in_path} not found", file=sys.stderr); sys.exit(1)
+    if not retrieval_path.exists():
+        print(f"ERROR: {retrieval_path} not found", file=sys.stderr); sys.exit(1)
+
+    retrieval_candidate_ids = load_retrieval_candidate_ids(retrieval_path, limit=args.top_k)
+    if not retrieval_candidate_ids:
+        print(f"ERROR: {retrieval_path} has no candidate_id rows", file=sys.stderr); sys.exit(1)
+    print(f"Loaded {len(retrieval_candidate_ids):,} retrieval candidates from {retrieval_path}")
 
     # Load external flags if provided
     external_flags = {}
@@ -609,15 +633,19 @@ def main():
         print(f"Loaded {len(external_flags):,} pre-computed flags from {args.flagged}")
 
     # ── Pass 1: load + feature extraction ────────────────────────────────────
-    print(f"Loading candidates from {in_path} ...", flush=True)
+    print(f"Loading candidate profiles from {in_path} ...", flush=True)
 
     all_candidates = []
     all_features   = []
     all_rule_scores = []
     skipped_honeypot = 0
+    skipped_not_retrieved = 0
 
     for i, c in enumerate(iter_candidates(in_path)):
         cid = c["candidate_id"]
+        if cid not in retrieval_candidate_ids:
+            skipped_not_retrieved += 1
+            continue
 
         # Flag check — skip confirmed honeypots
         verdict = external_flags.get(cid)
@@ -638,14 +666,15 @@ def main():
             print(f"  {i+1:,} loaded ...", flush=True)
 
     print(f"Loaded {len(all_candidates):,} candidates "
-          f"({skipped_honeypot:,} honeypots removed)")
+          f"({skipped_honeypot:,} honeypots removed, "
+          f"{skipped_not_retrieved:,} outside retrieval pool skipped)")
 
     rule_scores = np.array(all_rule_scores)
 
-    # ── Pass 2: pre-filter to top-k by rule score ────────────────────────────
-    top_k = min(args.top_k, len(all_candidates))
-    top_idx = np.argsort(rule_scores)[::-1][:top_k]
-    print(f"Pre-filtered to top {top_k:,} by domain score")
+    # ── Pass 2: rerank semantic retrieval pool by domain score ───────────────
+    top_k = len(all_candidates)
+    top_idx = np.argsort(rule_scores)[::-1]
+    print(f"Reranking {top_k:,} retrieved candidates by domain score")
 
     pool_candidates = [all_candidates[i] for i in top_idx]
     pool_features   = [all_features[i]   for i in top_idx]
