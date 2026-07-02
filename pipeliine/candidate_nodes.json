@@ -4,8 +4,8 @@
         "years_experience": 9.6,
         "industry_set": [
             "Fintech",
-            "Software",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Microservices": {
@@ -94,10 +94,10 @@
         "candidate_id": "CAND_0048357",
         "years_experience": 11.9,
         "industry_set": [
-            "Manufacturing",
-            "Paper Products",
             "Conglomerate",
-            "IT Services"
+            "IT Services",
+            "Manufacturing",
+            "Paper Products"
         ],
         "skills": {
             "Content Writing": {
@@ -267,9 +267,9 @@
         "candidate_id": "CAND_0084579",
         "years_experience": 8.6,
         "industry_set": [
+            "Food Delivery",
             "Fintech",
-            "IT Services",
-            "Food Delivery"
+            "IT Services"
         ],
         "skills": {
             "Diffusion Models": {
@@ -421,8 +421,8 @@
             }
         },
         "certifications": [
-            "AWS Certified Cloud Practitioner",
-            "Six Sigma Green Belt"
+            "Six Sigma Green Belt",
+            "AWS Certified Cloud Practitioner"
         ],
         "assessment_scores": {
             "BM25": 74.8
@@ -455,10 +455,10 @@
         "candidate_id": "CAND_0096803",
         "years_experience": 13.7,
         "industry_set": [
-            "Software",
-            "Paper Products",
             "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Paper Products",
+            "Software"
         ],
         "skills": {
             "Sales": {
@@ -606,8 +606,8 @@
         "candidate_id": "CAND_0039346",
         "years_experience": 5.2,
         "industry_set": [
-            "IT Services",
-            "Food Delivery"
+            "Food Delivery",
+            "IT Services"
         ],
         "skills": {
             "Webpack": {
@@ -710,8 +710,8 @@
         "candidate_id": "CAND_0005022",
         "years_experience": 6.7,
         "industry_set": [
-            "Software",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Tailwind": {
@@ -790,10 +790,10 @@
         "candidate_id": "CAND_0076383",
         "years_experience": 12.7,
         "industry_set": [
-            "Software",
-            "Paper Products",
             "Manufacturing",
-            "Conglomerate"
+            "Conglomerate",
+            "Paper Products",
+            "Software"
         ],
         "skills": {
             "Photoshop": {
@@ -864,9 +864,9 @@
         "candidate_id": "CAND_0039495",
         "years_experience": 4.2,
         "industry_set": [
-            "Software",
+            "Conglomerate",
             "Paper Products",
-            "Conglomerate"
+            "Software"
         ],
         "skills": {
             "Databricks": {
@@ -950,8 +950,8 @@
         "candidate_id": "CAND_0089721",
         "years_experience": 5.4,
         "industry_set": [
-            "Software",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Scrum": {
@@ -1100,8 +1100,8 @@
         "candidate_id": "CAND_0014793",
         "years_experience": 10.3,
         "industry_set": [
-            "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Manufacturing"
         ],
         "skills": {
             "Scrum": {
@@ -1165,8 +1165,8 @@
         "candidate_id": "CAND_0073084",
         "years_experience": 8.6,
         "industry_set": [
-            "Paper Products",
-            "IT Services"
+            "IT Services",
+            "Paper Products"
         ],
         "skills": {
             "Vue.js": {
@@ -1599,8 +1599,8 @@
         "candidate_id": "CAND_0076419",
         "years_experience": 7.5,
         "industry_set": [
-            "Software",
             "Food Delivery",
+            "Software",
             "Consulting"
         ],
         "skills": {
@@ -1709,9 +1709,9 @@
         "candidate_id": "CAND_0025516",
         "years_experience": 12.8,
         "industry_set": [
+            "IT Services",
             "Software",
-            "Paper Products",
-            "IT Services"
+            "Paper Products"
         ],
         "skills": {
             "Terraform": {
@@ -2052,9 +2052,9 @@
         "candidate_id": "CAND_0001907",
         "years_experience": 14.8,
         "industry_set": [
-            "Software",
+            "IT Services",
             "Paper Products",
-            "IT Services"
+            "Software"
         ],
         "skills": {
             "Accounting": {
@@ -2113,9 +2113,9 @@
         "candidate_id": "CAND_0050268",
         "years_experience": 11.7,
         "industry_set": [
-            "Manufacturing",
+            "IT Services",
             "Conglomerate",
-            "IT Services"
+            "Manufacturing"
         ],
         "skills": {
             "CSS": {
@@ -2187,8 +2187,8 @@
         "candidate_id": "CAND_0057610",
         "years_experience": 5.1,
         "industry_set": [
-            "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Manufacturing"
         ],
         "skills": {
             "CSS": {
@@ -2422,8 +2422,8 @@
         "candidate_id": "CAND_0093781",
         "years_experience": 6.6,
         "industry_set": [
-            "Manufacturing",
-            "Food Delivery"
+            "Food Delivery",
+            "Manufacturing"
         ],
         "skills": {
             "OpenCV": {
@@ -2504,8 +2504,8 @@
         "candidate_id": "CAND_0027798",
         "years_experience": 13.8,
         "industry_set": [
-            "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Manufacturing"
         ],
         "skills": {
             "JavaScript": {
@@ -2574,8 +2574,8 @@
         "candidate_id": "CAND_0001625",
         "years_experience": 4.2,
         "industry_set": [
-            "Paper Products",
-            "IT Services"
+            "IT Services",
+            "Paper Products"
         ],
         "skills": {
             "HTML": {
@@ -2679,8 +2679,8 @@
         "candidate_id": "CAND_0070617",
         "years_experience": 8.6,
         "industry_set": [
-            "Paper Products",
-            "Conglomerate"
+            "Conglomerate",
+            "Paper Products"
         ],
         "skills": {
             "Terraform": {
@@ -2957,9 +2957,9 @@
         "candidate_id": "CAND_0099519",
         "years_experience": 9.6,
         "industry_set": [
-            "Software",
+            "IT Services",
             "Manufacturing",
-            "IT Services"
+            "Software"
         ],
         "skills": {
             "dbt": {
@@ -3030,8 +3030,8 @@
         "candidate_id": "CAND_0098779",
         "years_experience": 8.6,
         "industry_set": [
-            "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Manufacturing"
         ],
         "skills": {
             "Accounting": {
@@ -3120,9 +3120,9 @@
         "candidate_id": "CAND_0064016",
         "years_experience": 12.1,
         "industry_set": [
-            "Software",
             "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Photoshop": {
@@ -3372,9 +3372,9 @@
         "candidate_id": "CAND_0023594",
         "years_experience": 8.5,
         "industry_set": [
-            "Software",
             "Conglomerate",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Flask": {
@@ -3455,9 +3455,9 @@
         "candidate_id": "CAND_0087069",
         "years_experience": 8.6,
         "industry_set": [
-            "Software",
             "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Python": {
@@ -3547,8 +3547,8 @@
         "candidate_id": "CAND_0039962",
         "years_experience": 6.5,
         "industry_set": [
-            "Fintech",
             "SaaS",
+            "Fintech",
             "Insurance Tech"
         ],
         "skills": {
@@ -3677,8 +3677,8 @@
         "candidate_id": "CAND_0035491",
         "years_experience": 14.5,
         "industry_set": [
-            "Software",
-            "Conglomerate"
+            "Conglomerate",
+            "Software"
         ],
         "skills": {
             "Rust": {
@@ -3759,8 +3759,8 @@
         "candidate_id": "CAND_0041724",
         "years_experience": 7.3,
         "industry_set": [
-            "Software",
-            "Paper Products"
+            "Paper Products",
+            "Software"
         ],
         "skills": {
             "Apache Flink": {
@@ -3834,8 +3834,8 @@
         "candidate_id": "CAND_0034987",
         "years_experience": 8.7,
         "industry_set": [
-            "Paper Products",
-            "IT Services"
+            "IT Services",
+            "Paper Products"
         ],
         "skills": {
             "Content Writing": {
@@ -3914,8 +3914,8 @@
         "candidate_id": "CAND_0016933",
         "years_experience": 8.7,
         "industry_set": [
-            "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Manufacturing"
         ],
         "skills": {
             "Tailwind": {
@@ -4333,9 +4333,9 @@
         "candidate_id": "CAND_0097670",
         "years_experience": 10.4,
         "industry_set": [
-            "Software",
             "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Kafka": {
@@ -4479,8 +4479,8 @@
             }
         },
         "certifications": [
-            "Six Sigma Green Belt",
-            "Scrum Master Certified"
+            "Scrum Master Certified",
+            "Six Sigma Green Belt"
         ],
         "assessment_scores": {},
         "redrob_vector": {
@@ -4511,9 +4511,9 @@
         "candidate_id": "CAND_0080523",
         "years_experience": 7.8,
         "industry_set": [
+            "Manufacturing",
             "Software",
-            "Paper Products",
-            "Manufacturing"
+            "Paper Products"
         ],
         "skills": {
             "SEO": {
@@ -4573,8 +4573,8 @@
             }
         },
         "certifications": [
-            "AWS Certified Cloud Practitioner",
-            "Six Sigma Green Belt"
+            "Six Sigma Green Belt",
+            "AWS Certified Cloud Practitioner"
         ],
         "assessment_scores": {
             "Forecasting": 24.9
@@ -4770,9 +4770,9 @@
         "candidate_id": "CAND_0028524",
         "years_experience": 14.5,
         "industry_set": [
-            "Software",
             "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "MongoDB": {
@@ -5021,9 +5021,9 @@
         "candidate_id": "CAND_0098995",
         "years_experience": 8.2,
         "industry_set": [
-            "Software",
+            "IT Services",
             "Paper Products",
-            "IT Services"
+            "Software"
         ],
         "skills": {
             "Go": {
@@ -5352,10 +5352,10 @@
         "candidate_id": "CAND_0011430",
         "years_experience": 12.0,
         "industry_set": [
+            "IT Services",
             "Manufacturing",
-            "Paper Products",
             "Software",
-            "IT Services"
+            "Paper Products"
         ],
         "skills": {
             "Microservices": {
@@ -5596,9 +5596,9 @@
         "candidate_id": "CAND_0079608",
         "years_experience": 5.0,
         "industry_set": [
-            "E-commerce",
+            "Food Delivery",
             "IT Services",
-            "Food Delivery"
+            "E-commerce"
         ],
         "skills": {
             "Redux": {
@@ -5822,9 +5822,9 @@
         "candidate_id": "CAND_0039055",
         "years_experience": 11.1,
         "industry_set": [
+            "IT Services",
             "Manufacturing",
-            "Paper Products",
-            "IT Services"
+            "Paper Products"
         ],
         "skills": {
             "Content Writing": {
@@ -6034,8 +6034,8 @@
         "candidate_id": "CAND_0008294",
         "years_experience": 11.3,
         "industry_set": [
-            "Software",
-            "Manufacturing"
+            "Manufacturing",
+            "Software"
         ],
         "skills": {
             "Snowflake": {
@@ -6104,10 +6104,10 @@
         "candidate_id": "CAND_0083470",
         "years_experience": 14.0,
         "industry_set": [
-            "Manufacturing",
-            "Paper Products",
+            "IT Services",
             "Conglomerate",
-            "IT Services"
+            "Manufacturing",
+            "Paper Products"
         ],
         "skills": {
             "Snowflake": {
@@ -6176,9 +6176,9 @@
         "candidate_id": "CAND_0069911",
         "years_experience": 13.8,
         "industry_set": [
-            "Software",
             "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Django": {
@@ -6432,8 +6432,8 @@
         "candidate_id": "CAND_0005190",
         "years_experience": 2.4,
         "industry_set": [
-            "Software",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Salesforce CRM": {
@@ -6492,10 +6492,10 @@
         "candidate_id": "CAND_0012059",
         "years_experience": 12.9,
         "industry_set": [
-            "Manufacturing",
-            "Paper Products",
+            "IT Services",
             "Conglomerate",
-            "IT Services"
+            "Manufacturing",
+            "Paper Products"
         ],
         "skills": {
             "React": {
@@ -6622,8 +6622,8 @@
         "years_experience": 11.0,
         "industry_set": [
             "Manufacturing",
-            "Paper Products",
-            "Conglomerate"
+            "Conglomerate",
+            "Paper Products"
         ],
         "skills": {
             "Flask": {
@@ -6722,8 +6722,8 @@
             }
         },
         "certifications": [
-            "AWS Certified Cloud Practitioner",
-            "Six Sigma Green Belt"
+            "Six Sigma Green Belt",
+            "AWS Certified Cloud Practitioner"
         ],
         "assessment_scores": {},
         "redrob_vector": {
@@ -6754,9 +6754,9 @@
         "candidate_id": "CAND_0004810",
         "years_experience": 14.1,
         "industry_set": [
-            "Software",
+            "Conglomerate",
             "Manufacturing",
-            "Conglomerate"
+            "Software"
         ],
         "skills": {
             "Kafka": {
@@ -6826,8 +6826,8 @@
         "years_experience": 8.4,
         "industry_set": [
             "Manufacturing",
-            "Paper Products",
             "Conglomerate",
+            "Paper Products",
             "Software"
         ],
         "skills": {
@@ -6974,8 +6974,8 @@
         "candidate_id": "CAND_0059500",
         "years_experience": 10.9,
         "industry_set": [
-            "Software",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Terraform": {
@@ -7177,9 +7177,9 @@
         "candidate_id": "CAND_0017842",
         "years_experience": 5.7,
         "industry_set": [
-            "Software",
+            "Conglomerate",
             "Manufacturing",
-            "Conglomerate"
+            "Software"
         ],
         "skills": {
             "CI/CD": {
@@ -7317,8 +7317,8 @@
             }
         },
         "certifications": [
-            "Six Sigma Green Belt",
-            "Scrum Master Certified"
+            "Scrum Master Certified",
+            "Six Sigma Green Belt"
         ],
         "assessment_scores": {},
         "redrob_vector": {
@@ -7423,8 +7423,8 @@
         "candidate_id": "CAND_0017120",
         "years_experience": 8.7,
         "industry_set": [
-            "Software",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Spark": {
@@ -7498,9 +7498,9 @@
         "candidate_id": "CAND_0016610",
         "years_experience": 14.0,
         "industry_set": [
-            "Software",
             "Manufacturing",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Content Writing": {
@@ -7639,9 +7639,9 @@
         "candidate_id": "CAND_0050774",
         "years_experience": 10.4,
         "industry_set": [
-            "Software",
             "Conglomerate",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "Webpack": {
@@ -7810,9 +7810,9 @@
         "years_experience": 14.9,
         "industry_set": [
             "Manufacturing",
-            "Software",
             "Conglomerate",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "CSS": {
@@ -7967,8 +7967,8 @@
         "candidate_id": "CAND_0090657",
         "years_experience": 14.7,
         "industry_set": [
-            "Software",
-            "Manufacturing"
+            "Manufacturing",
+            "Software"
         ],
         "skills": {
             "Kafka": {
@@ -8040,8 +8040,8 @@
         "candidate_id": "CAND_0061300",
         "years_experience": 8.6,
         "industry_set": [
-            "Software",
-            "Food Delivery"
+            "Food Delivery",
+            "Software"
         ],
         "skills": {
             "PowerPoint": {
@@ -8147,10 +8147,10 @@
         "candidate_id": "CAND_0078252",
         "years_experience": 9.9,
         "industry_set": [
-            "Software",
-            "Paper Products",
+            "Conglomerate",
             "Manufacturing",
-            "Conglomerate"
+            "Software",
+            "Paper Products"
         ],
         "skills": {
             "Databricks": {
@@ -8234,8 +8234,8 @@
         "candidate_id": "CAND_0093553",
         "years_experience": 11.6,
         "industry_set": [
-            "Software",
-            "Conglomerate"
+            "Conglomerate",
+            "Software"
         ],
         "skills": {
             "Six Sigma": {
@@ -8294,8 +8294,8 @@
         "candidate_id": "CAND_0038726",
         "years_experience": 5.9,
         "industry_set": [
-            "Software",
-            "IT Services"
+            "IT Services",
+            "Software"
         ],
         "skills": {
             "CNN": {
