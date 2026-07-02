@@ -102,7 +102,8 @@ React + Vite graph UI
 Interactive candidate similarity graph
 ```
 
-<img width="1693" height="929" alt="ChatGPT Image Jul 2, 2026, 09_48_13 PM" src="https://github.com/user-attachments/assets/24653861-0c52-4f8e-844f-ff911f3331e4" />
+<img width="1693" height="929" alt="ChatGPT Image Jul 2, 2026, 10_05_26 PM" src="https://github.com/user-attachments/assets/1672170f-a5a5-4254-9083-6ac060b8fd24" />
+
 
 
 ## Project Structure
